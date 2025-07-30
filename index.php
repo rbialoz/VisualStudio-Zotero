@@ -4,20 +4,33 @@
 // --- CONFIGURATION ---
 $zoteroUserID = '24259'; // Replace with your Zotero user ID
 $zoteroAPIKey = 'a743gqc7AS3HgY57iZlshfH9'; // Replace with your Zotero API key (if needed)
-$zoteroAPIUrl = "https://api.zotero.org/users/$zoteroUserID/items";
+
+$zoteroAPIUrlBase = "https://api.zotero.org/users/$zoteroUserID/items";
+$zoteroLimit = 100; // Max allowed by Zotero API
 
 // --- HANDLE SEARCH ---
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
 // --- FETCH DATA FROM ZOTERO ---
+
 $options = [
     'http' => [
         'header' => "Zotero-API-Key: $zoteroAPIKey\r\n"
     ]
 ];
 $context = stream_context_create($options);
-$response = @file_get_contents($zoteroAPIUrl . '?format=json', false, $context);
-$items = $response ? json_decode($response, true) : [];
+
+// --- FETCH ALL ENTRIES WITH PAGINATION ---
+$items = [];
+$start = 0;
+do {
+    $url = $zoteroAPIUrlBase . '?format=json&limit=' . $zoteroLimit . '&start=' . $start;
+    $response = @file_get_contents($url, false, $context);
+    $batch = $response ? json_decode($response, true) : [];
+    $items = array_merge($items, $batch);
+    $fetched = count($batch);
+    $start += $zoteroLimit;
+} while ($fetched === $zoteroLimit);
 
 // --- FILTER ENTRIES ---
 function filter_items($items, $search) {
