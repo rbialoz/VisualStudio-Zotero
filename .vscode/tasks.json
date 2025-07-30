@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run PHP Built-in Server",
+            "type": "shell",
+            "command": "php -S localhost:8000",
+            "group": "build",
+            "isBackground": true,
+            "problemMatcher": []
+        }
+    ]
+}
