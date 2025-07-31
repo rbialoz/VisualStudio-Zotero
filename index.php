@@ -52,11 +52,37 @@ if ($search) {
 // --- FILTER ENTRIES ---
 
 
+
 // Filter out attachment items (e.g., PDFs)
 $displayItems = array_filter($items, function($item) {
     $data = $item['data'] ?? [];
     return isset($data['itemType']) && $data['itemType'] !== 'attachment';
 });
+
+// Fetch formatted citations for the display items (one by one for reliability)
+$citationStyle = 'journal-of-ecology';
+$citationMap = [];
+if (!empty($displayItems)) {
+    foreach ($displayItems as $item) {
+        $key = $item['key'] ?? '';
+        if ($key) {
+            $bibUrl = "https://api.zotero.org/users/$zoteroUserID/items/$key?format=bib&style=$citationStyle";
+            $bibOptions = [
+                'http' => [
+                    'header' => "Zotero-API-Key: $zoteroAPIKey\r\nAccept: text/html\r\n"
+                ]
+            ];
+            $bibContext = stream_context_create($bibOptions);
+            $bibResponse = @file_get_contents($bibUrl, false, $bibContext);
+            if ($bibResponse !== false) {
+                // Extract citation from <div class="csl-entry">...</div>
+                if (preg_match('/<div class="csl-entry">(.*?)<\/div>/s', $bibResponse, $match)) {
+                    $citationMap[$key] = $match[1];
+                }
+            }
+        }
+    }
+}
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -86,7 +112,16 @@ $displayItems = array_filter($items, function($item) {
         ?>
         <div class="entry">
             <div class="title"><?php echo htmlspecialchars($data['title'] ?? '[No Title]'); ?></div>
-            <div class="abstract"><?php echo nl2br(htmlspecialchars($data['abstractNote'] ?? '')); ?></div>
+            <div class="abstract">
+                <?php
+                $key = $item['key'] ?? '';
+                if (isset($citationMap[$key]) && $citationMap[$key]) {
+                    echo $citationMap[$key];
+                } else {
+                    echo '<em>No citation available.</em>';
+                }
+                ?>
+            </div>
         </div>
         <?php endforeach; ?>
     <?php endif; ?>
