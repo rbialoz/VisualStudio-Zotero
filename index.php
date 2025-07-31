@@ -2,8 +2,8 @@
 // Simple PHP script to fetch and display Zotero entries with search functionality
 
 // --- CONFIGURATION ---
-$zoteroUserID = '24259'; // Replace with your Zotero user ID
-$zoteroAPIKey = 'a743gqc7AS3HgY57iZlshfH9'; // Replace with your Zotero API key (if needed)
+$zoteroUserID = '5324318'; // Replace with your Zotero user ID
+$zoteroAPIKey = 'xtg7JwyCgUeNZ5Aotpa6q9KV'; // Replace with your API key
 
 $zoteroAPIUrlBase = "https://api.zotero.org/users/$zoteroUserID/items";
 $zoteroLimit = 100; // Max allowed by Zotero API
