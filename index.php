@@ -152,6 +152,29 @@ if (!empty($displayItems)) {
                     $doiUrl = 'https://doi.org/' . htmlspecialchars($doi);
                     echo ' <a href="' . $doiUrl . '" target="_blank" rel="noopener">DOI: ' . htmlspecialchars($doi) . '</a>';
                 }
+
+                // Generate local PDF filename (Zotero-like template: {Author}{Year} - {Title}.pdf)
+                $author = $data['creators'][0]['lastName'] ?? 'Unknown';
+                preg_match('/\\d{4}/', $data['date'] ?? '', $yearMatch);
+                $year = $yearMatch[0] ?? 'n.d.';
+                $title = $data['title'] ?? 'Untitled';
+                // truncate the title to a reasonable length if necessary
+                if (strlen($title) > 50) {
+                    $title = substr($title, 0, 50);
+                }
+                $filename = $author . '_' . $year . '_' . $title . '.pdf';
+                // Remove any special characters that are not allowed in filenames  
+                // Sanitize filename for filesystem
+                $filename = preg_replace('/[\\/:*?"<>|]/', '', $filename);
+                $filename = preg_replace('/ /', '_', $filename);
+                $filename = strtolower($filename);
+                $pdfPath = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . $filename;
+                // For web link, you may need to adjust the path to be accessible via HTTP if needed
+                // if (file_exists($pdfPath)) {
+                    // If the file is accessible via HTTP, adjust the URL accordingly
+                    $pdfUrl = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/' . rawurlencode($filename);
+                    echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">[PDF]</a>';
+                // }
             } else {
                 echo '<em>No citation available.</em>';
             }
