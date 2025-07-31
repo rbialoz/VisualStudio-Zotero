@@ -153,28 +153,43 @@ if (!empty($displayItems)) {
                     echo ' <a href="' . $doiUrl . '" target="_blank" rel="noopener">DOI: ' . htmlspecialchars($doi) . '</a>';
                 }
 
-                // Generate local PDF filename (Zotero-like template: {Author}{Year} - {Title}.pdf)
-                $author = $data['creators'][0]['lastName'] ?? 'Unknown';
+                // Generate local PDF filename using advanced Zotero-like template
+                // {{ firstCreator case="snake" join="_" suffix="-" }}
+                $firstCreator = $data['creators'][0]['lastName'] ?? 'unknown';
+                $firstCreator = strtolower(str_replace(' ', '_', $firstCreator)) . '_';
+
+                // {{ year suffix="-" }}
                 preg_match('/\\d{4}/', $data['date'] ?? '', $yearMatch);
-                $year = $yearMatch[0] ?? 'n.d.';
-                $title = $data['title'] ?? 'Untitled';
-                // truncate the title to a reasonable length if necessary
-                if (strlen($title) > 50) {
-                    $title = substr($title, 0, 50);
+                $year = ($yearMatch[0] ?? 'n.d.') . '_';
+
+                // {{ title truncate="50" case="snake" }}
+                $title = $data['title'] ?? 'untitled';
+                $title = strtolower(str_replace(' ', '_', $title));
+                $title = substr($title, 0, 50);
+                
+                if (preg_match('/^Waldzustandsbericht/i', $title)) {
+                    if ( preg_match('/unknown/i', $firstCreator)) {
+                        $firstCreator = 'NW-FVA_';
+                    }   
                 }
-                $filename = $author . '_' . $year . '_' . $title . '.pdf';
-                // Remove any special characters that are not allowed in filenames  
-                // Sanitize filename for filesystem
+
+                // Combine all parts
+                $filename = $firstCreator . $year . $title;
+                // append state in parts of the Waldzustandsbericht
+                $bookTitle = $data['bookTitle'] ?? '';
+                if (preg_match('/^Waldzustandsbericht/i', $bookTitle)) {
+                    $bookTitlePart = strtolower(substr($bookTitle, 30, 100));
+                    $filename = $filename . '_für_' . $bookTitlePart;
+                } 
+                // Remove any special characters not allowed in filenames
                 $filename = preg_replace('/[\\/:*?"<>|]/', '', $filename);
-                $filename = preg_replace('/ /', '_', $filename);
-                $filename = strtolower($filename);
+                $filename = preg_replace('/__+/', '_', $filename); // collapse multiple underscores
+                $filename = trim($filename, '_-');
+                $filename = $filename . '.pdf'; // ensure .pdf extension    
                 $pdfPath = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . $filename;
                 // For web link, you may need to adjust the path to be accessible via HTTP if needed
-                // if (file_exists($pdfPath)) {
-                    // If the file is accessible via HTTP, adjust the URL accordingly
-                    $pdfUrl = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/' . rawurlencode($filename);
-                    echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">[PDF]</a>';
-                // }
+                $pdfUrl = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . rawurlencode($filename);
+                echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">[PDF]</a>';
             } else {
                 echo '<em>No citation available.</em>';
             }
