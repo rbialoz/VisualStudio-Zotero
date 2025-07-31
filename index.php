@@ -51,8 +51,12 @@ if ($search) {
 
 // --- FILTER ENTRIES ---
 
-// No need to filter locally, as server-side search is used
-$displayItems = $items;
+
+// Filter out attachment items (e.g., PDFs)
+$displayItems = array_filter($items, function($item) {
+    $data = $item['data'] ?? [];
+    return isset($data['itemType']) && $data['itemType'] !== 'attachment';
+});
 
 ?><!DOCTYPE html>
 <html lang="en">
