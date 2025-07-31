@@ -111,25 +111,22 @@ if (!empty($displayItems)) {
             $data = $item['data'] ?? [];
         ?>
         <div class="entry">
-            <div class="title"><?php echo htmlspecialchars($data['title'] ?? '[No Title]'); ?></div>
-            <div class="abstract">
-                <?php
-                $key = $item['key'] ?? '';
-                $citation = isset($citationMap[$key]) && $citationMap[$key] ? $citationMap[$key] : null;
-                if ($citation) {
-                    // Remove any trailing DOI URL from the citation
-                    $citationClean = preg_replace('/\s*https?:\/\/doi\.org\/[\w\/\.\-()]+/i', '', $citation);
-                    $doi = $data['DOI'] ?? '';
-                    echo $citationClean;
-                    if ($doi) {
-                        $doiUrl = 'https://doi.org/' . htmlspecialchars($doi);
-                        echo ' <a href="' . $doiUrl . '" target="_blank" rel="noopener">DOI: ' . htmlspecialchars($doi) . '</a>';
-                    }
-                } else {
-                    echo '<em>No citation available.</em>';
+            <?php
+            $key = $item['key'] ?? '';
+            $citation = isset($citationMap[$key]) && $citationMap[$key] ? $citationMap[$key] : null;
+            if ($citation) {
+                // Remove any trailing DOI URL from the citation
+                $citationClean = preg_replace('/\s*https?:\/\/doi\.org\/[\w\/\.\-()]+/i', '', $citation);
+                $doi = $data['DOI'] ?? '';
+                echo $citationClean;
+                if ($doi) {
+                    $doiUrl = 'https://doi.org/' . htmlspecialchars($doi);
+                    echo ' <a href="' . $doiUrl . '" target="_blank" rel="noopener">DOI: ' . htmlspecialchars($doi) . '</a>';
                 }
-                ?>
-            </div>
+            } else {
+                echo '<em>No citation available.</em>';
+            }
+            ?>
         </div>
         <?php endforeach; ?>
     <?php endif; ?>
