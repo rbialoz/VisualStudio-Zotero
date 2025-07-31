@@ -21,32 +21,38 @@ $options = [
 $context = stream_context_create($options);
 
 // --- FETCH ALL ENTRIES WITH PAGINATION ---
-$items = [];
-$start = 0;
-do {
-    $url = $zoteroAPIUrlBase . '?format=json&limit=' . $zoteroLimit . '&start=' . $start;
-    $response = @file_get_contents($url, false, $context);
-    $batch = $response ? json_decode($response, true) : [];
-    $items = array_merge($items, $batch);
-    $fetched = count($batch);
-    $start += $zoteroLimit;
-} while ($fetched === $zoteroLimit);
+
+// If a search term is present, filter on the server using 'q' parameter
+if ($search) {
+    $items = [];
+    $start = 0;
+    $q = urlencode($search);
+    do {
+        $url = $zoteroAPIUrlBase . '?format=json&limit=' . $zoteroLimit . '&start=' . $start . '&q=' . $q;
+        $response = @file_get_contents($url, false, $context);
+        $batch = $response ? json_decode($response, true) : [];
+        $items = array_merge($items, $batch);
+        $fetched = count($batch);
+        $start += $zoteroLimit;
+    } while ($fetched === $zoteroLimit);
+} else {
+    // No search: fetch all entries with pagination
+    $items = [];
+    $start = 0;
+    do {
+        $url = $zoteroAPIUrlBase . '?format=json&limit=' . $zoteroLimit . '&start=' . $start;
+        $response = @file_get_contents($url, false, $context);
+        $batch = $response ? json_decode($response, true) : [];
+        $items = array_merge($items, $batch);
+        $fetched = count($batch);
+        $start += $zoteroLimit;
+    } while ($fetched === $zoteroLimit);
+}
 
 // --- FILTER ENTRIES ---
-function filter_items($items, $search) {
-    if (!$search) return $items;
-    $filtered = [];
-    foreach ($items as $item) {
-        $data = $item['data'] ?? [];
-        $title = $data['title'] ?? '';
-        $abstract = $data['abstractNote'] ?? '';
-        if (stripos($title, $search) !== false || stripos($abstract, $search) !== false) {
-            $filtered[] = $item;
-        }
-    }
-    return $filtered;
-}
-$displayItems = filter_items($items, $search);
+
+// No need to filter locally, as server-side search is used
+$displayItems = $items;
 
 ?><!DOCTYPE html>
 <html lang="en">
