@@ -1,4 +1,5 @@
 <?php
+set_time_limit(120); // increases limit to 120 seconds
 // Simple PHP script to fetch and display Zotero entries with search functionality
 
 // --- CONFIGURATION ---
@@ -124,14 +125,15 @@ if (!empty($displayItems)) {
 </head>
 <body>
     <h1>Zotero Entries Viewer (VSCode)</h1>
-    <form method="get" style="display: flex; gap: 1em; align-items: center;">
-        <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search entries...">
+    <form method="get" id="searchForm" style="display: flex; gap: 1em; align-items: center;">
+        <input type="text" name="search" id="searchInput" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search entries...">
         <label for="sort">Sort by:</label>
         <select name="sort" id="sort">
             <option value="year"<?php if ($sort === 'year') echo ' selected'; ?>>Year</option>
             <option value="author"<?php if ($sort === 'author') echo ' selected'; ?>>Author</option>
         </select>
         <button type="submit">Search</button>
+        <button type="button" onclick="document.getElementById('searchInput').value=''; document.getElementById('searchForm').submit();">Clear</button>
     </form>
     <?php if (empty($displayItems)): ?>
         <p>No entries found.</p>

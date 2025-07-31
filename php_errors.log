@@ -457,3 +457,7 @@ Stack trace:
 [31-Jul-2025 14:10:38 UTC] PHP Warning:  Undefined variable $bookTitle in /home/rbialozyt/VisualStudio-Zotero/index.php on line 179
 [31-Jul-2025 14:10:38 UTC] PHP Warning:  Undefined variable $bookTitle in /home/rbialozyt/VisualStudio-Zotero/index.php on line 179
 [31-Jul-2025 14:10:38 UTC] PHP Warning:  Undefined variable $bookTitle in /home/rbialozyt/VisualStudio-Zotero/index.php on line 179
+[31-Jul-2025 15:00:38 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
+[31-Jul-2025 15:08:11 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
+[31-Jul-2025 15:18:52 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
+[31-Jul-2025 15:24:48 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
