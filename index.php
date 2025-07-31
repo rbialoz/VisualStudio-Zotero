@@ -115,8 +115,16 @@ if (!empty($displayItems)) {
             <div class="abstract">
                 <?php
                 $key = $item['key'] ?? '';
-                if (isset($citationMap[$key]) && $citationMap[$key]) {
-                    echo $citationMap[$key];
+                $citation = isset($citationMap[$key]) && $citationMap[$key] ? $citationMap[$key] : null;
+                if ($citation) {
+                    // Remove any trailing DOI URL from the citation
+                    $citationClean = preg_replace('/\s*https?:\/\/doi\.org\/[\w\/\.\-()]+/i', '', $citation);
+                    $doi = $data['DOI'] ?? '';
+                    echo $citationClean;
+                    if ($doi) {
+                        $doiUrl = 'https://doi.org/' . htmlspecialchars($doi);
+                        echo ' <a href="' . $doiUrl . '" target="_blank" rel="noopener">DOI: ' . htmlspecialchars($doi) . '</a>';
+                    }
                 } else {
                     echo '<em>No citation available.</em>';
                 }
