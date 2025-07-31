@@ -8,8 +8,9 @@ $zoteroAPIKey = 'a743gqc7AS3HgY57iZlshfH9'; // Replace with your Zotero API key 
 $zoteroAPIUrlBase = "https://api.zotero.org/users/$zoteroUserID/items";
 $zoteroLimit = 100; // Max allowed by Zotero API
 
-// --- HANDLE SEARCH ---
+// --- HANDLE SEARCH & SORT ---
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
+$sort = isset($_GET['sort']) ? $_GET['sort'] : 'year'; // default sort by year
 
 // --- FETCH DATA FROM ZOTERO ---
 
@@ -59,6 +60,29 @@ $displayItems = array_filter($items, function($item) {
     return isset($data['itemType']) && $data['itemType'] !== 'attachment';
 });
 
+// Sort $displayItems by year or author
+if (!empty($displayItems)) {
+    $displayItems = array_values($displayItems); // reindex
+    if ($sort === 'author') {
+        usort($displayItems, function($a, $b) {
+            $aAuthors = $a['data']['creators'][0]['lastName'] ?? '';
+            $bAuthors = $b['data']['creators'][0]['lastName'] ?? '';
+            return strcasecmp($aAuthors, $bAuthors);
+        });
+    } else { // default: year
+        usort($displayItems, function($a, $b) {
+            $aYear = $a['data']['date'] ?? '';
+            $bYear = $b['data']['date'] ?? '';
+            // Try to extract year from date string
+            preg_match('/\\d{4}/', $aYear, $aMatch);
+            preg_match('/\\d{4}/', $bYear, $bMatch);
+            $aYearNum = isset($aMatch[0]) ? (int)$aMatch[0] : 0;
+            $bYearNum = isset($bMatch[0]) ? (int)$bMatch[0] : 0;
+            return $bYearNum <=> $aYearNum; // descending (most recent first)
+        });
+    }
+}
+
 // Fetch formatted citations for the display items (one by one for reliability)
 $citationStyle = 'journal-of-ecology';
 $citationMap = [];
@@ -100,8 +124,13 @@ if (!empty($displayItems)) {
 </head>
 <body>
     <h1>Zotero Entries Viewer (VSCode)</h1>
-    <form method="get">
+    <form method="get" style="display: flex; gap: 1em; align-items: center;">
         <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search entries...">
+        <label for="sort">Sort by:</label>
+        <select name="sort" id="sort">
+            <option value="year"<?php if ($sort === 'year') echo ' selected'; ?>>Year</option>
+            <option value="author"<?php if ($sort === 'author') echo ' selected'; ?>>Author</option>
+        </select>
         <button type="submit">Search</button>
     </form>
     <?php if (empty($displayItems)): ?>
