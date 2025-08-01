@@ -470,3 +470,4 @@ Stack trace:
 [01-Aug-2025 08:02:21 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
 [01-Aug-2025 09:26:21 UTC] PHP Warning:  preg_replace(): Unknown modifier ',' in /home/rbialozyt/VisualStudio-Zotero/index.php on line 214
 [01-Aug-2025 09:26:56 UTC] PHP Warning:  preg_replace(): Unknown modifier '�' in /home/rbialozyt/VisualStudio-Zotero/index.php on line 214
+[01-Aug-2025 13:28:52 UTC] PHP Warning:  file_put_contents(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/frühbrodt_2024_verbenone_��the_universal_bark_beetle_repellent_i.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 247
