@@ -143,7 +143,7 @@ if (!empty($displayItems)) {
             <option value="author"<?php if ($sort === 'author') echo ' selected'; ?>>Author</option>
         </select>
         <button type="submit">Search</button>
-        <button type="button" onclick="document.getElementById('searchInput').value=''; document.getElementById('searchForm').submit();">Clear</button>
+        <button type="button" onclick="document.getElementById('searchInput').value='';">Clear</button>
     </form>
 
     <?php if ($totalPages > 1): ?>
@@ -157,6 +157,9 @@ if (!empty($displayItems)) {
         <?php endif; ?>
     </div>
     <?php endif; ?>
+
+    <?php // Entries list is rendered only once, see above ?>
+
     <?php if (empty($displayItems)): ?>
         <p>No entries found.</p>
     <?php else: ?>
@@ -202,11 +205,13 @@ if (!empty($displayItems)) {
                 // append state in parts of the Waldzustandsbericht
                 $bookTitle = $data['bookTitle'] ?? '';
                 if (preg_match('/^Waldzustandsbericht/i', $bookTitle)) {
-                    $bookTitlePart = substr($bookTitle, 29, 100);
+                    $bookTitlePart = strtolower(substr($bookTitle, 30, 100));
                     $filename = $filename . '_für_' . $bookTitlePart;
                 } 
                 // Remove any special characters not allowed in filenames
-                $filename = preg_replace('/[\\/:,*?"<>|]/', '', $filename);
+                $filename = preg_replace('/[\\/:,\.()*?"<>|]/', '', $filename);
+                // decode em-dash
+                $filename = urldecode($filename);
                 $filename = preg_replace('/__+/', '_', $filename); // collapse multiple underscores
                 $filename = trim($filename, '_-');
                 $filename = $filename . '.pdf'; // ensure .pdf extension    
@@ -220,6 +225,17 @@ if (!empty($displayItems)) {
             ?>
         </div>
         <?php endforeach; ?>
+    <?php endif; ?>
+    <?php if ($totalPages > 1): ?>
+    <div style="margin-top: 1em;">
+        <?php if ($page > 1): ?>
+            <a href="?<?php echo http_build_query(array_merge($_GET, ['page' => $page - 1])); ?>">&laquo; Prev</a>
+        <?php endif; ?>
+        Page <?php echo $page; ?> of <?php echo $totalPages; ?>
+        <?php if ($page < $totalPages): ?>
+            <a href="?<?php echo http_build_query(array_merge($_GET, ['page' => $page + 1])); ?>">Next &raquo;</a>
+        <?php endif; ?>
+    </div>
     <?php endif; ?>
 </body>
 </html>
