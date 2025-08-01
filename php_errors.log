@@ -461,3 +461,10 @@ Stack trace:
 [31-Jul-2025 15:08:11 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
 [31-Jul-2025 15:18:52 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
 [31-Jul-2025 15:24:48 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
+[31-Jul-2025 15:35:24 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
+[31-Jul-2025 16:09:10 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 101
+[31-Jul-2025 16:45:45 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 101
+[31-Jul-2025 17:21:04 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 101
+[01-Aug-2025 07:43:36 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 101
+[01-Aug-2025 07:55:17 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
+[01-Aug-2025 08:02:21 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100

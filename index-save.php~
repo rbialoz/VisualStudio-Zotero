@@ -1,4 +1,5 @@
 <?php
+set_time_limit(120); // increases limit to 120 seconds
 // Simple PHP script to fetch and display Zotero entries with search functionality
 
 // --- CONFIGURATION ---
@@ -55,24 +56,22 @@ if ($search) {
 
 
 // Filter out attachment items (e.g., PDFs)
-
-// Filter out attachment items (e.g., PDFs)
-$filteredItems = array_filter($items, function($item) {
+$displayItems = array_filter($items, function($item) {
     $data = $item['data'] ?? [];
     return isset($data['itemType']) && $data['itemType'] !== 'attachment';
 });
 
-// Sort $filteredItems by year or author
-if (!empty($filteredItems)) {
-    $filteredItems = array_values($filteredItems); // reindex
+// Sort $displayItems by year or author
+if (!empty($displayItems)) {
+    $displayItems = array_values($displayItems); // reindex
     if ($sort === 'author') {
-        usort($filteredItems, function($a, $b) {
+        usort($displayItems, function($a, $b) {
             $aAuthors = $a['data']['creators'][0]['lastName'] ?? '';
             $bAuthors = $b['data']['creators'][0]['lastName'] ?? '';
             return strcasecmp($aAuthors, $bAuthors);
         });
     } else { // default: year
-        usort($filteredItems, function($a, $b) {
+        usort($displayItems, function($a, $b) {
             $aYear = $a['data']['date'] ?? '';
             $bYear = $b['data']['date'] ?? '';
             // Try to extract year from date string
@@ -85,16 +84,7 @@ if (!empty($filteredItems)) {
     }
 }
 
-// --- PAGINATION ---
-$perPage = 20;
-$totalItems = count($filteredItems);
-$totalPages = max(1, ceil($totalItems / $perPage));
-$page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
-if ($page > $totalPages) $page = $totalPages;
-$startIdx = ($page - 1) * $perPage;
-$displayItems = array_slice($filteredItems, $startIdx, $perPage);
-
-// Fetch formatted citations for the display items (only for current page)
+// Fetch formatted citations for the display items (one by one for reliability)
 $citationStyle = 'journal-of-ecology';
 $citationMap = [];
 if (!empty($displayItems)) {
@@ -135,8 +125,8 @@ if (!empty($displayItems)) {
 </head>
 <body>
     <h1>Zotero Entries Viewer (VSCode)</h1>
-    <form id="searchForm" method="get" style="display: flex; gap: 1em; align-items: center;">
-        <input id="searchInput" type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search entries...">
+    <form method="get" id="searchForm" style="display: flex; gap: 1em; align-items: center;">
+        <input type="text" name="search" id="searchInput" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search entries...">
         <label for="sort">Sort by:</label>
         <select name="sort" id="sort">
             <option value="year"<?php if ($sort === 'year') echo ' selected'; ?>>Year</option>
@@ -145,79 +135,68 @@ if (!empty($displayItems)) {
         <button type="submit">Search</button>
         <button type="button" onclick="document.getElementById('searchInput').value=''; document.getElementById('searchForm').submit();">Clear</button>
     </form>
-
-    <?php if ($totalPages > 1): ?>
-    <div style="margin-bottom: 1em;">
-        <?php if ($page > 1): ?>
-            <a href="?<?php echo http_build_query(array_merge($_GET, ['page' => $page - 1])); ?>">&laquo; Prev</a>
-        <?php endif; ?>
-        Page <?php echo $page; ?> of <?php echo $totalPages; ?>
-        <?php if ($page < $totalPages): ?>
-            <a href="?<?php echo http_build_query(array_merge($_GET, ['page' => $page + 1])); ?>">Next &raquo;</a>
-        <?php endif; ?>
-    </div>
-    <?php endif; ?>
     <?php if (empty($displayItems)): ?>
         <p>No entries found.</p>
     <?php else: ?>
         <?php foreach ($displayItems as $item):
             $data = $item['data'] ?? [];
         ?>
-        <div class="entry">
-            <?php
-            $key = $item['key'] ?? '';
-            $citation = isset($citationMap[$key]) && $citationMap[$key] ? $citationMap[$key] : null;
-            if ($citation) {
-                // Remove any trailing DOI URL from the citation
-                $citationClean = preg_replace('/\s*https?:\/\/doi\.org\/[\w\/\.\-()]+/i', '', $citation);
-                $doi = $data['DOI'] ?? '';
-                echo $citationClean;
-                if ($doi) {
-                    $doiUrl = 'https://doi.org/' . htmlspecialchars($doi);
-                    echo ' <a href="' . $doiUrl . '" target="_blank" rel="noopener">DOI: ' . htmlspecialchars($doi) . '</a>';
-                }
+            <div class="entry">
+		<?php
+		$key = $item['key'] ?? '';
+		$citation = isset($citationMap[$key]) && $citationMap[$key] ? $citationMap[$key] : null;
+		if ($citation) {
+                    // Remove any trailing DOI URL from the citation
+                    $citationClean = preg_replace('/\s*https?:\/\/doi\.org\/[\w\/\.\-()]+/i', '', $citation);
+                    $doi = $data['DOI'] ?? '';
+                    echo $citationClean;
+                    if ($doi) {
+			$doiUrl = 'https://doi.org/' . htmlspecialchars($doi);
+			echo ' <a href="' . $doiUrl . '" target="_blank" rel="noopener">DOI: ' . htmlspecialchars($doi) . '</a>';
+                    }
 
-                // Generate local PDF filename using advanced Zotero-like template
-                // {{ firstCreator case="snake" join="_" suffix="-" }}
-                $firstCreator = $data['creators'][0]['lastName'] ?? 'unknown';
-                $firstCreator = strtolower(str_replace(' ', '_', $firstCreator)) . '_';
+                    // Generate local PDF filename using advanced Zotero-like template
+                    // {{ firstCreator case="snake" join="_" suffix="-" }}
+                    $firstCreator = $data['creators'][0]['lastName'] ?? 'unknown';
+                    $firstCreator = strtolower(str_replace(' ', '_', $firstCreator)) . '_';
 
-                // {{ year suffix="-" }}
-                preg_match('/\\d{4}/', $data['date'] ?? '', $yearMatch);
-                $year = ($yearMatch[0] ?? 'n.d.') . '_';
+                    // {{ year suffix="-" }}
+                    preg_match('/\\d{4}/', $data['date'] ?? '', $yearMatch);
+                    $year = ($yearMatch[0] ?? 'n.d.') . '_';
 
-                // {{ title truncate="50" case="snake" }}
-                $title = $data['title'] ?? 'untitled';
-                $title = strtolower(str_replace(' ', '_', $title));
-                $title = substr($title, 0, 50);
-                
-                if (preg_match('/^Waldzustandsbericht/i', $title)) {
-                    if ( preg_match('/unknown/i', $firstCreator)) {
-                        $firstCreator = 'NW-FVA_';
-                    }   
-                }
+                    // {{ title truncate="50" case="snake" }}
+                    $title = $data['title'] ?? 'untitled';
+                    $title = strtolower(str_replace(' ', '_', $title));
+                    $title = substr($title, 0, 50);
+                    
+                    if (preg_match('/^Waldzustandsbericht/i', $title)) {
+			if ( preg_match('/unknown/i', $firstCreator)) {
+                            $firstCreator = 'NW-FVA_';
+			}   
+                    }
 
-                // Combine all parts
-                $filename = $firstCreator . $year . $title;
-                // append state in parts of the Waldzustandsbericht
-                $bookTitle = $data['bookTitle'] ?? '';
-                if (preg_match('/^Waldzustandsbericht/i', $bookTitle)) {
-                    $bookTitlePart = substr($bookTitle, 29, 100);
-                    $filename = $filename . '_für_' . $bookTitlePart;
-                } 
-                // Remove any special characters not allowed in filenames
-                $filename = preg_replace('/[\\/:,*?"<>|]/', '', $filename);
-                $filename = preg_replace('/__+/', '_', $filename); // collapse multiple underscores
-                $filename = trim($filename, '_-');
-                $filename = $filename . '.pdf'; // ensure .pdf extension    
-                $pdfPath = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . $filename;
-                // For web link, you may need to adjust the path to be accessible via HTTP if needed
-                $pdfUrl = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . rawurlencode($filename);
-                echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">[PDF]</a>';
-            } else {
-                echo '<em>No citation available.</em>';
-            }
-            ?>
+                    // Combine all parts
+                    $filename = $firstCreator . $year . $title;
+                    // append state in parts of the Waldzustandsbericht
+                    $bookTitle = $data['bookTitle'] ?? '';
+                    if (preg_match('/^Waldzustandsbericht/i', $bookTitle)) {
+			$bookTitlePart = strtolower(substr($bookTitle, 30, 100));
+			$filename = $filename . '_für_' . $bookTitlePart;
+                    } 
+                    // Remove any special characters not allowed in filenames
+                    $filename = preg_replace('/[\\/:,*?"<>|]/', '', $filename);
+                    $filename = preg_replace('/__+/', '_', $filename); // collapse multiple underscores
+                    $filename = trim($filename, '_-');
+                    $filename = $filename . '.pdf'; // ensure .pdf extension    
+                    $pdfPath = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . $filename;
+                    // For web link, you may need to adjust the path to be accessible via HTTP if needed
+                    $filename = preg_replace('/[\\/:,*?"<>|]/', '', $filename);
+                    $pdfUrl = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . rawurlencode($filename);
+                    echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">[PDF]</a>';
+		} else {
+                    echo '<em>No citation available.</em>';
+		}
+		?>
         </div>
         <?php endforeach; ?>
     <?php endif; ?>
