@@ -468,3 +468,5 @@ Stack trace:
 [01-Aug-2025 07:43:36 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 101
 [01-Aug-2025 07:55:17 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
 [01-Aug-2025 08:02:21 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbialozyt/VisualStudio-Zotero/index.php on line 100
+[01-Aug-2025 09:26:21 UTC] PHP Warning:  preg_replace(): Unknown modifier ',' in /home/rbialozyt/VisualStudio-Zotero/index.php on line 214
+[01-Aug-2025 09:26:56 UTC] PHP Warning:  preg_replace(): Unknown modifier '�' in /home/rbialozyt/VisualStudio-Zotero/index.php on line 214

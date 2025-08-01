@@ -209,9 +209,12 @@ if (!empty($displayItems)) {
                     $filename = $filename . '_für_' . $bookTitlePart;
                 } 
                 // Remove any special characters not allowed in filenames
-                $filename = preg_replace('/[\\/:,\.()*?"<>|]/', '', $filename);
-                // decode em-dash
-                $filename = urldecode($filename);
+                $filename = urldecode($filename); // decode percent-encoded UTF-8
+                // Replace en dash and em dash with a normal dash
+                // Remove any remaining percent-encoded bytes (e.g. %E2)
+                $filename = preg_replace('/%[0-9A-Fa-f]{2}/', '', rawurlencode($filename));
+                $filename = str_replace(["_-_"], "-", $filename);
+                $filename = preg_replace('/[\/,:,\.\(\)*?"<>|]/', '', $filename);
                 $filename = preg_replace('/__+/', '_', $filename); // collapse multiple underscores
                 $filename = trim($filename, '_-');
                 $filename = $filename . '.pdf'; // ensure .pdf extension    
