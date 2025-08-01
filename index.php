@@ -174,6 +174,12 @@ if (!empty($displayItems)) {
                 // Remove any trailing DOI URL from the citation
                 $citationClean = preg_replace('/\s*https?:\/\/doi\.org\/[\w\/\.\-()]+/i', '', $citation);
                 $doi = $data['DOI'] ?? '';
+                // If DOI is missing, try to extract from 'extra' field
+                if (!$doi && !empty($data['extra'])) {
+                    if (preg_match('/DOI:\s*([^\s]+)/i', $data['extra'], $doiMatch)) {
+                        $doi = trim($doiMatch[1]);
+                    }
+                }
                 echo $citationClean;
                 if ($doi) {
                     $doiUrl = 'https://doi.org/' . htmlspecialchars($doi);
@@ -208,12 +214,13 @@ if (!empty($displayItems)) {
                     $bookTitlePart = strtolower(substr($bookTitle, 30, 100));
                     $filename = $filename . '_für_' . $bookTitlePart;
                 } 
-                // Remove any special characters not allowed in filenames
                 $filename = urldecode($filename); // decode percent-encoded UTF-8
                 // Replace en dash and em dash with a normal dash
+                // Not solved yet: %E2 problem
                 // Remove any remaining percent-encoded bytes (e.g. %E2)
-                $filename = preg_replace('/%[0-9A-Fa-f]{2}/', '', rawurlencode($filename));
-                $filename = str_replace(["_-_"], "-", $filename);
+                $filename = preg_replace('/%[E][2]/', '_', rawurlencode($filename));
+                $filename = str_replace(["_-_"], "-", rawurldecode($filename));
+                // Remove any special characters not allowed in filenames
                 $filename = preg_replace('/[\/,:,\.\(\)*?"<>|]/', '', $filename);
                 $filename = preg_replace('/__+/', '_', $filename); // collapse multiple underscores
                 $filename = trim($filename, '_-');
@@ -222,8 +229,48 @@ if (!empty($displayItems)) {
                 // For web link, you may need to adjust the path to be accessible via HTTP if needed
                 $pdfUrl = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . rawurlencode($filename);
                 echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">[PDF]</a>';
+                if (file_exists($pdfPath)) {
+                    echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Download PDF</a>';
+                } else {
+                    // Try to download PDF using DOI if available
+                    if ($doi) {
+                        // Try Unpaywall first (open access)
+                        $unpaywallApi = 'https://api.unpaywall.org/v2/' . rawurlencode($doi) . '?email=your@email.com';
+                        $unpaywallJson = @file_get_contents($unpaywallApi);
+                        $pdfDownloaded = false;
+                        if ($unpaywallJson) {
+                            $unpaywallData = json_decode($unpaywallJson, true);
+                            $oaLocation = $unpaywallData['best_oa_location']['url_for_pdf'] ?? '';
+                            if ($oaLocation) {
+                                $pdfContent = @file_get_contents($oaLocation);
+                                if ($pdfContent !== false) {
+                                    file_put_contents($pdfPath, $pdfContent);
+                                    $pdfDownloaded = true;
+                                }
+                            }
+                        }
+                        // Fallback: try doi.org (may not work for paywalled articles)
+                        if (!$pdfDownloaded) {
+                            $doiPdfUrl = 'https://doi.org/' . rawurlencode($doi);
+                            $pdfContent = @file_get_contents($doiPdfUrl);
+                            if ($pdfContent !== false && strpos($http_response_header[0], 'application/pdf') !== false) {
+                                file_put_contents($pdfPath, $pdfContent);
+                                $pdfDownloaded = true;
+                            }
+                        }
+                        if ($pdfDownloaded && file_exists($pdfPath)) {
+                            echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Download PDF (fetched)</a>';
+                        } else {
+                            echo ' <span style="color: red;">PDF not found (tried DOI)</span>';
+                        }
+                    } else {
+                        echo ' <span style="color: red;">PDF not found</span>';
+                    }
+                }
+            } elseif (isset($data['title'])) {
+                // If no citation available, just show the title
             } else {
-                echo '<em>No citation available.</em>';
+                echo '<em>No matching entries found.</em>';
             }
             ?>
         </div>

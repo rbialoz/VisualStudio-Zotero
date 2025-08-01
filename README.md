@@ -16,3 +16,19 @@ This PHP web application fetches entries from the Zotero Web API and displays th
 ## Customization
 
 - Edit `index.php` to change the Zotero API endpoint or display logic.
+
+## Problems
+
+### 2025-08-01
+
+* the '%E2' problem still remains
+  * Search term "Vierte Bundeswaldinventur" would show at the end
+* at the moment the big 'Ü' is not made to lower case
+  * Search term "Klimawandel und Forstwirtschaft" 
+    * but only of the '%E2' line is not activated
+  * Serach term "Übertragbarkeit empirischer statistischer Waldwachstumsmodelle"
+    * here also, when the '%E2' line is active
+* no idea how to implement the special NW-FVA style
+* there are still many entries with an author 'unknown'
+  * maybe these are not articles but a different entry type
+* 
