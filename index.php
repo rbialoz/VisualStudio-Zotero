@@ -224,14 +224,31 @@ if (!empty($displayItems)) {
                 $filename = preg_replace('/[\/,:,\.\(\)*?"<>|]/', '', $filename);
                 $filename = preg_replace('/__+/', '_', $filename); // collapse multiple underscores
                 $filename = trim($filename, '_-');
-                $filename = $filename . '.pdf'; // ensure .pdf extension    
+                $filename = $filename . '.pdf'; // ensure .pdf extension   
+                $pos = strpos($filename, '_');
+                if ($pos !== false) {
+                    // replace first underscore
+                    $filepattern = substr_replace($filename, '*', $pos, 1);
+                    $pos = strpos($filepattern, '_');
+                    // replace second underscore
+                    $filepattern = substr_replace($filepattern, '*', $pos, 1);
+                    $filepattern = substr($filepattern, 0, 40);
+                }
                 $pdfPath = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . $filename;
                 // For web link, you may need to adjust the path to be accessible via HTTP if needed
                 $pdfUrl = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . rawurlencode($filename);
                 echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">[PDF]</a>';
+                // two lines below are to test if similar files exist
+                $pathPattern = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . $filepattern . '*';
+                echo '<span style="color: green;"> Pattern: ' . $pathPattern . '</span>';
+                $files = glob($pathPattern);
+                echo '<span style="color: green;"> Matched files: ' . count($files) . '</span>';
                 if (file_exists($pdfPath)) {
                     echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Download PDF</a>';
-                    rename($pdfUrl, '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
+                    copy($pdfUrl, '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
+                } elseif (count($files) == 1) {
+                        echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Renamed PDF</a>';
+                        copy($files[0], '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
                 } else {
                     // Try to download PDF using DOI if available
                     if ($doi) {
