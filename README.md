@@ -33,3 +33,7 @@ This PHP web application fetches entries from the Zotero Web API and displays th
   - maybe these are not articles but a different entry type
 - Fetch PDF if DOI links to a PDF file drectly, not so if it links to a html page
   - in the folder 'G:/zotero_pdfs/alle_pdfs_save/alle_pdfs' all entries after the 1. August 2025 are downloaded papers
+
+## Start the server
+
+- php -S localhost:8000

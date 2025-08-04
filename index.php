@@ -134,7 +134,7 @@ if (!empty($displayItems)) {
     </style>
 </head>
 <body>
-    <h1>Zotero Entries Viewer (VSCode)</h1>
+    <h1>Zotero Entries Viewer (NW-FVA)</h1>
     <form id="searchForm" method="get" style="display: flex; gap: 1em; align-items: center;">
         <input id="searchInput" type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search entries...">
         <label for="sort">Sort by:</label>
@@ -231,6 +231,7 @@ if (!empty($displayItems)) {
                 echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">[PDF]</a>';
                 if (file_exists($pdfPath)) {
                     echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Download PDF</a>';
+                    rename($pdfUrl, '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
                 } else {
                     // Try to download PDF using DOI if available
                     if ($doi) {
@@ -260,6 +261,7 @@ if (!empty($displayItems)) {
                         }
                         if ($pdfDownloaded && file_exists($pdfPath)) {
                             echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Download PDF (fetched)</a>';
+                            rename($pdfUrl, '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
                         } else {
                             echo ' <span style="color: red;">PDF not found (tried DOI)</span>';
                         }
