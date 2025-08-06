@@ -171,6 +171,7 @@ if (!empty($displayItems)) {
             $key = $item['key'] ?? '';
             $citation = isset($citationMap[$key]) && $citationMap[$key] ? $citationMap[$key] : null;
             if ($citation) {
+                $pdfDownloaded = false;
                 // Remove any trailing DOI URL from the citation
                 $citationClean = preg_replace('/\s*https?:\/\/doi\.org\/[\w\/\.\-()]+/i', '', $citation);
                 $doi = $data['DOI'] ?? '';
@@ -240,54 +241,65 @@ if (!empty($displayItems)) {
                 echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">[PDF]</a>';
                 // two lines below are to test if similar files exist
                 $pathPattern = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . $filepattern . '*';
+                $urlField = $data['url'] ?? ''; // if it contains a valid link to a pdf file
                 echo '<span style="color: green;"> Pattern: ' . $pathPattern . '</span>';
                 $files = glob($pathPattern);
                 echo '<span style="color: green;"> Matched files: ' . count($files) . '</span>';
                 if (file_exists($pdfPath)) {
                     echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Download PDF</a>';
                     copy($pdfUrl, '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
+                    $pdfDownloaded = true;
                 } elseif (count($files) == 1) {
                         echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Renamed PDF</a>';
                         copy($files[0], '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
-                } else {
-                    // Try to download PDF using DOI if available
-                    if ($doi) {
-                        // Try Unpaywall first (open access)
-                        $unpaywallApi = 'https://api.unpaywall.org/v2/' . rawurlencode($doi) . '?email=your@email.com';
-                        $unpaywallJson = @file_get_contents($unpaywallApi);
-                        $pdfDownloaded = false;
-                        if ($unpaywallJson) {
-                            $unpaywallData = json_decode($unpaywallJson, true);
-                            $oaLocation = $unpaywallData['best_oa_location']['url_for_pdf'] ?? '';
-                            if ($oaLocation) {
-                                $pdfContent = @file_get_contents($oaLocation);
-                                if ($pdfContent !== false) {
-                                    file_put_contents($pdfPath, $pdfContent);
-                                    $pdfDownloaded = true;
-                                }
-                            }
-                        }
-                        // Fallback: try doi.org (may not work for paywalled articles)
-                        if (!$pdfDownloaded) {
-                            $doiPdfUrl = 'https://doi.org/' . rawurlencode($doi);
-                            $pdfContent = @file_get_contents($doiPdfUrl);
-                            if ($pdfContent !== false && strpos($http_response_header[0], 'application/pdf') !== false) {
+                        $pdfDownloaded = true;
+                } elseif ($doi && !$pdfDownloaded) { // Try to download PDF using DOI if available
+                    // Try Unpaywall first (open access)
+                    $unpaywallApi = 'https://api.unpaywall.org/v2/' . rawurlencode($doi) . '?email=your@email.com';
+                    $unpaywallJson = @file_get_contents($unpaywallApi);
+                    if ($unpaywallJson) {
+                        $unpaywallData = json_decode($unpaywallJson, true);
+                        $oaLocation = $unpaywallData['best_oa_location']['url_for_pdf'] ?? '';
+                        if ($oaLocation) {
+                            $pdfContent = @file_get_contents($oaLocation);
+                            if ($pdfContent !== false) {
                                 file_put_contents($pdfPath, $pdfContent);
                                 $pdfDownloaded = true;
                             }
                         }
-                        if ($pdfDownloaded && file_exists($pdfPath)) {
-                            echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Download PDF (fetched)</a>';
-                            rename($pdfUrl, '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
-                        } else {
-                            echo ' <span style="color: red;">PDF not found (tried DOI)</span>';
-                        }
-                    } else {
-                        echo ' <span style="color: red;">PDF not found</span>';
                     }
+                    // Fallback: try doi.org (may not work for paywalled articles)
+                    if (!$pdfDownloaded) {
+                        $doiPdfUrl = 'https://doi.org/' . rawurlencode($doi);
+                        $pdfContent = @file_get_contents($doiPdfUrl);
+                        if ($pdfContent !== false && strpos($http_response_header[0], 'application/pdf') !== false) {
+                            file_put_contents($pdfPath, $pdfContent);
+                            $pdfDownloaded = true;
+                        }
+                    }
+                    if ($pdfDownloaded && file_exists($pdfPath)) {
+                        echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Download PDF (fetched)</a>';
+                        rename($pdfUrl, '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
+                    } else {
+                        echo ' <span style="color: red;">PDF not found (tried DOI)</span>';
+                    }
+                } elseif ($urlField && preg_match('/\\.pdf($|\\?)/i', $urlField) && !$pdfDownloaded) {
+                   // Try to download PDF from URL field if it ends with .pdf
+                    $pdfContent = @file_get_contents($urlField);
+                    if ($pdfContent !== false) {
+                        file_put_contents($pdfPath, $pdfContent);
+                        echo ' <a href="' . $pdfUrl . '" target="_blank" rel="noopener">Download PDF (from URL)</a>';
+                        copy($pdfPath, '/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/' . $filename);
+                        $pdfDownloaded = true;
+                    } else {
+                        echo ' <span style="color: red;">PDF not found (URL fetch failed)</span>';
+                    }
+                } else {
+                    echo ' <span style="color: red;">PDF not found</span>';
                 }
-            } elseif (isset($data['title'])) {
+            // } elseif (isset($data['title'])) {
                 // If no citation available, just show the title
+                // echo '<span class="title">' . htmlspecialchars($data['title']) . '</span>';
             } else {
                 echo '<em>No matching entries found.</em>';
             }

@@ -482,3 +482,44 @@ Stack trace:
 [04-Aug-2025 14:21:28 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/albert_2024_eine_neue_generation_von_ertragstafeln_f%C3%BCr_die_ba.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 248
 [04-Aug-2025 14:23:15 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/albert_2024_eine_neue_generation_von_ertragstafeln_f%C3%BCr_die_ba.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 248
 [04-Aug-2025 15:19:29 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/engel_2016_wald_mit_natürlicher_entwicklung_��_ist_das_5-%.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 251
+[06-Aug-2025 08:55:41 UTC] PHP Warning:  rename(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_f%C3%BCr_a.pdf,/media/rbialozyt/G/zotero_pdfs/renamed_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_für_a.pdf): No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 281
+[06-Aug-2025 08:57:57 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_f%C3%BCr_a.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 248
+[06-Aug-2025 09:09:36 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_f%C3%BCr_a.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 248
+[06-Aug-2025 09:11:08 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_f%C3%BCr_a.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 248
+[06-Aug-2025 12:09:12 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string & bool in /home/rbialozyt/VisualStudio-Zotero/index.php:258
+Stack trace:
+#0 {main}
+  thrown in /home/rbialozyt/VisualStudio-Zotero/index.php on line 258
+[06-Aug-2025 12:09:54 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string & bool in /home/rbialozyt/VisualStudio-Zotero/index.php:258
+Stack trace:
+#0 {main}
+  thrown in /home/rbialozyt/VisualStudio-Zotero/index.php on line 258
+[06-Aug-2025 12:10:34 UTC] PHP Warning:  A non-numeric value encountered in /home/rbialozyt/VisualStudio-Zotero/index.php on line 258
+[06-Aug-2025 12:10:34 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string & bool in /home/rbialozyt/VisualStudio-Zotero/index.php:258
+Stack trace:
+#0 {main}
+  thrown in /home/rbialozyt/VisualStudio-Zotero/index.php on line 258
+[06-Aug-2025 12:11:21 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string & bool in /home/rbialozyt/VisualStudio-Zotero/index.php:258
+Stack trace:
+#0 {main}
+  thrown in /home/rbialozyt/VisualStudio-Zotero/index.php on line 258
+[06-Aug-2025 12:13:18 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string & bool in /home/rbialozyt/VisualStudio-Zotero/index.php:258
+Stack trace:
+#0 {main}
+  thrown in /home/rbialozyt/VisualStudio-Zotero/index.php on line 258
+[06-Aug-2025 12:27:17 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string & bool in /home/rbialozyt/VisualStudio-Zotero/index.php:256
+Stack trace:
+#0 {main}
+  thrown in /home/rbialozyt/VisualStudio-Zotero/index.php on line 256
+[06-Aug-2025 12:30:48 UTC] PHP Warning:  file_put_contents(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/schaub_2019_trends_and_events_��_drought_extreme_climate_and.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 290
+[06-Aug-2025 12:30:48 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/schaub_2019_trends_and_events_��_drought_extreme_climate_and.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 292
+[06-Aug-2025 12:33:52 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_f%C3%BCr_a.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
+[06-Aug-2025 12:42:06 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_f%C3%BCr_a.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
+[06-Aug-2025 12:42:06 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2014_forstliche_fernerkundung_in_den_bundesl%C3%A4ndern_auf.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
+[06-Aug-2025 12:44:24 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_f%C3%BCr_a.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
+[06-Aug-2025 12:44:24 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2014_forstliche_fernerkundung_in_den_bundesl%C3%A4ndern_auf.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
+[06-Aug-2025 12:48:18 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_f%C3%BCr_a.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
+[06-Aug-2025 12:48:18 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2014_forstliche_fernerkundung_in_den_bundesl%C3%A4ndern_auf.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
+[06-Aug-2025 12:48:40 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2012_das_digitale_luftbild-ein_praxisleitfaden_f%C3%BCr_a.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
+[06-Aug-2025 12:48:40 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/ackermann_2014_forstliche_fernerkundung_in_den_bundesl%C3%A4ndern_auf.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
+[06-Aug-2025 14:37:17 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/liesebach_2021_identifizierung_von_f%C3%BCr_deutschland_relevanten_ba.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 250
