@@ -78,3 +78,6 @@ This PHP web application fetches entries from the Zotero Web API and displays th
 - "Journal of Fish Biology"
   - zu 1. mit "Berichte .." und Band Nummer
   - zu 2. 6 Autoren  ... letzter Autor (Jahr)
+  - aber das "In" bei Buchteil ohne Doppelpunkt
+
+Immer noch nicht das richtige Format gefunden. Eignetlich sieht "Natur und Landschaft" gut aus ODER "Egretta".

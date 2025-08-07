@@ -57,9 +57,16 @@ if ($search) {
 // Filter out attachment items (e.g., PDFs)
 
 // Filter out attachment items (e.g., PDFs)
-$filteredItems = array_filter($items, function($item) {
+$filteredItems = array_filter($items, function($item) use ($tagsearch) {
     $data = $item['data'] ?? [];
-    return isset($data['itemType']) && $data['itemType'] !== 'attachment';
+    if (!isset($data['itemType']) || $data['itemType'] === 'attachment') return false;
+    if ($tagsearch) {
+        $tags = array_map(function($tag) { return strtolower($tag['tag'] ?? ''); }, $data['tags'] ?? []);
+        return array_filter($tags, function($t) use ($tagsearch) {
+            return strpos($t, strtolower($tagsearch)) !== false;
+        });
+    }
+    return true;
 });
 
 // Sort $filteredItems by year or author
@@ -95,7 +102,7 @@ $startIdx = ($page - 1) * $perPage;
 $displayItems = array_slice($filteredItems, $startIdx, $perPage);
 
 // Fetch formatted citations for the display items (only for current page)
-$citationStyle = 'journal-of-fish-biology';
+$citationStyle = 'natur-und-landschaft'; // 'egretta'; // 'zeitschrift-fuer-qualitative-forschung'; // 'deutsche-sprache'; //'journal-of-fish-biology';
 $citationMap = [];
 if (!empty($displayItems)) {
     foreach ($displayItems as $item) {
@@ -135,15 +142,20 @@ if (!empty($displayItems)) {
 </head>
 <body>
     <h1>Zotero Entries Viewer (NW-FVA)</h1>
-    <form id="searchForm" method="get" style="display: flex; gap: 1em; align-items: center;">
-        <input id="searchInput" type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search entries...">
-        <label for="sort">Sort by:</label>
-        <select name="sort" id="sort">
-            <option value="year"<?php if ($sort === 'year') echo ' selected'; ?>>Year</option>
-            <option value="author"<?php if ($sort === 'author') echo ' selected'; ?>>Author</option>
-        </select>
+    <form id="searchForm" method="get" style="display: flex; flex-direction: column; gap: 0.5em; align-items: flex-start;">
+        <div style="display: flex; gap: 1em; align-items: center;">
+            <input id="searchInput" type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search entries...">
+            <label for="sort">Sort by:</label>
+            <select name="sort" id="sort">
+                <option value="year"<?php if ($sort === 'year') echo ' selected'; ?>>Year</option>
+                <option value="author"<?php if ($sort === 'author') echo ' selected'; ?>>Author</option>
+            </select>
         <button type="submit">Search</button>
         <button type="button" onclick="document.getElementById('searchInput').value='';">Clear</button>
+        </div>
+        <div>
+            <input id="tagInput" type="text" name="tagsearch" value="<?php echo htmlspecialchars($_GET['tagsearch'] ?? ''); ?>" placeholder="Search tags...">
+        </div>
     </form>
 
     <?php if ($totalPages > 1): ?>
