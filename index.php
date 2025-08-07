@@ -95,7 +95,8 @@ $startIdx = ($page - 1) * $perPage;
 $displayItems = array_slice($filteredItems, $startIdx, $perPage);
 
 // Fetch formatted citations for the display items (only for current page)
-$citationStyle = 'journal-of-ecology';
+// $citationStyle = 'journal-of-ecology';
+$citationStyle = 'ecological-modelling';
 $citationMap = [];
 if (!empty($displayItems)) {
     foreach ($displayItems as $item) {
