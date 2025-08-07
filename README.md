@@ -37,3 +37,44 @@ This PHP web application fetches entries from the Zotero Web API and displays th
 ## Start the server
 
 - php -S localhost:8000
+
+## Zitierstiel
+
+### Tests
+
+1. Suche: "Monitoring des Zustands von Waldböden in Hessen"
+
+- "Berichte der Sektion Waldökosystemfoschung" (Reihe) auch mit der Namen der Serien und der Nummer des Bandes.
+
+2. Suche: "Effects of Climate and Atmospheric Nitrogen Deposition"
+
+- viele, viele Autoren (mehr als 20)
+
+### Results
+
+- "Ecological Modelling" (ecological-modelling)
+  - zu 1. auch mit der Namen der Serien aber keine Band Nummer.
+  - zu 2. ALLE Autoren
+  - und die Jahreszahl ist nicht in Klammern
+- "Journal of Ecology" (journal-of-ecology)
+  - Jahreszahl in Klammern
+  - zu 2. Viele Autoren, dann nur 20 Autoren
+  - zu 1. dafür aber nicht der Serienname
+- "Ecology Letters" (ecology-letters)
+  - zu 2. max. 6 Autoren sonst et al
+  - zu 1. Berichte wird auch ausgegeben, allerdings ohne die Band Nummer
+- "Conservation Letters"
+  - zu 1. ohne Band Nummer
+  - zu 2. Alle Autoren
+- "Ecological Entomology"
+  - zu 1. ohne Band Nummer
+  - zu 2. max 6 Autoren
+- "Evolution Letters"
+  - zu 1. ohne Band Nummer
+  - zu 2. max 6 Autoren
+- "Folia Biologica"
+  - zu 1. mit Band-Nummer voran
+  - zu 2. alle Autoren
+- "Journal of Fish Biology"
+  - zu 1. mit "Berichte .." und Band Nummer
+  - zu 2. 6 Autoren  ... letzter Autor (Jahr)
