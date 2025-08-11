@@ -724,3 +724,159 @@ Stack trace:
 [11-Aug-2025 12:54:45 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
 [11-Aug-2025 12:55:15 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
 [11-Aug-2025 12:55:32 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 334
+[11-Aug-2025 13:03:37 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:03:56 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 340
+[11-Aug-2025 13:08:50 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:09:01 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:09:01 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:09:01 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:09:03 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:09:07 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:09:07 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:09:08 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:09:08 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:09:08 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:09:09 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:10:36 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:10:47 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:10:47 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:10:48 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:11:00 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:11:03 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:11:03 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:11:04 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:11:04 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:11:04 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:11:04 UTC] PHP Warning:  Undefined variable $editors in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:13:11 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:13:21 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:13:21 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:13:21 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:13:23 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:13:26 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:13:26 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:13:26 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:13:26 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:13:27 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:13:27 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:23:19 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:23:27 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:23:27 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:23:27 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:23:29 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:23:32 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:23:32 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:23:32 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:23:32 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:23:32 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:23:33 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:25:56 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:26:09 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:26:09 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:26:09 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:26:10 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:26:13 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:26:13 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:26:13 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:26:13 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:26:14 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:26:14 UTC] PHP Warning:  Undefined variable $editorsStr in /home/rbialozyt/VisualStudio-Zotero/index.php on line 190
+[11-Aug-2025 13:29:20 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:29:35 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:31:45 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:32:01 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:32:12 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:32:35 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:33:38 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:34:05 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:34:20 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:34:37 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 362
+[11-Aug-2025 13:40:59 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:41:13 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 363
+[11-Aug-2025 13:41:42 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:41:56 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:44:45 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:44:53 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:53 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:54 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:55 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:56 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:58 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:59 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:59 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:59 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:44:59 UTC] PHP Warning:  Undefined array key "editor" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 168
+[11-Aug-2025 13:45:22 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:45:36 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:47:07 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:47:21 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:47:21 UTC] PHP Warning:  Undefined array key "name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:47:21 UTC] PHP Warning:  Undefined array key "name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:47:21 UTC] PHP Warning:  Undefined array key "name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:48:12 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:48:26 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:48:26 UTC] PHP Warning:  Undefined array key "Name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:48:26 UTC] PHP Warning:  Undefined array key "Name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:48:26 UTC] PHP Warning:  Undefined array key "Name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:51:21 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:51:49 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:51:49 UTC] PHP Warning:  Undefined array key "Name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:51:49 UTC] PHP Warning:  Undefined array key "Name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:51:49 UTC] PHP Warning:  Undefined array key "Name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:52:46 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:53:02 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:53:02 UTC] PHP Warning:  Undefined array key "name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:53:02 UTC] PHP Warning:  Undefined array key "name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:53:02 UTC] PHP Warning:  Undefined array key "name" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 181
+[11-Aug-2025 13:53:41 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:53:50 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:50 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:50 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:50 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:51 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:51 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:54 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:53:55 UTC] PHP Warning:  Undefined array key "firstName" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 176
+[11-Aug-2025 13:54:21 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:54:34 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:55:00 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:55:14 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 364
+[11-Aug-2025 13:57:44 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 13:57:58 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 363
+[11-Aug-2025 14:00:06 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 14:00:20 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 369

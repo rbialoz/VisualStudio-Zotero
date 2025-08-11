@@ -102,7 +102,7 @@ $startIdx = ($page - 1) * $perPage;
 $displayItems = array_slice($filteredItems, $startIdx, $perPage);
 
 // Fetch formatted citations for the display items (only for current page)
-$citationStyle = 'natur-und-landschaft'; // 'egretta'; // 'zeitschrift-fuer-qualitative-forschung'; // 'deutsche-sprache'; //'journal-of-fish-biology';
+$citationStyle = 'apa'; //'natur-und-landschaft'; // 'egretta'; // 'zeitschrift-fuer-qualitative-forschung'; // 'deutsche-sprache'; //'journal-of-fish-biology';
 $citationMap = [];
 if (!empty($displayItems)) {
     foreach ($displayItems as $item) {
@@ -163,6 +163,41 @@ function format_custom_citation($data) {
         $year = $m[0];
     }
 
+    // Editors
+    $editorsStr = '';
+    // Debug: print_r($data['creators']);
+    if (!empty($data['creators'])) {
+        $editors = [];
+        foreach ($data['creators'] as $creator) {
+            if (($creator['creatorType'] ?? '') === 'editor' && !empty($creator['name'])) {
+                $initials = '';
+                if (!empty($creator['firstName'])) {
+                    // Split firstName by space or hyphen and take the first letter of each part
+                    $parts = preg_split('/[\s\-]+/', $creator['firstName']);
+                    foreach ($parts as $part) {
+                        $initials .= mb_substr($part, 0, 1, 'UTF-8') . '.';
+                    }
+                }
+                $editors[] = $creator['name'] . ($initials ? ', ' . $initials : '');
+            }
+        }
+        if (count($editors) > 0) {
+            $editorsStr = implode('; ', $editors);
+        }
+    }
+    
+    // bookSection
+    if ( $data['itemType'] === 'bookSection' && !empty($data['bookTitle'])) {
+        if (empty($editorsStr)) {
+            $title .= '. In: ' . $data['bookTitle'];
+        }
+        else {
+            $title .= '. In: ' . $editorsStr . ' (Hrsg.): ' . $data['bookTitle'];
+        }
+    } elseif ($data['itemType'] === 'report' && !empty($data['bookTitle'])) {
+        $title .= '. In: ' . $editorsStr . ' (Hrsg.): ' . $data['bookTitle'];
+    }
+    
     // Journal
     $journal = $data['publicationTitle'] ?? '';
 
