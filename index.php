@@ -126,6 +126,72 @@ if (!empty($displayItems)) {
     }
 }
 
+function format_custom_citation($data) {
+    // Authors
+    $authors = [];
+    if (!empty($data['creators'])) {
+        foreach ($data['creators'] as $creator) {
+            if (!empty($creator['lastName'])) {
+                $initials = '';
+                if (!empty($creator['firstName'])) {
+                    // Split firstName by space or hyphen and take the first letter of each part
+                    $parts = preg_split('/[\s\-]+/', $creator['firstName']);
+                    foreach ($parts as $part) {
+                        $initials .= mb_substr($part, 0, 1, 'UTF-8') . '.';
+                    }
+                }
+                $authors[] = $creator['lastName'] . ($initials ? ', ' . $initials : '');
+            }
+        }
+        // Limit to 10 authors, add "et al." if more
+        if (count($authors) > 10) {
+            $authors = array_slice($authors, 0, 10);
+            $authors[] = 'et al.';
+        }
+    }
+    $authorStr = implode('; ', $authors);
+
+    // Year
+    $year = '';
+    if (!empty($data['date']) && preg_match('/\d{4}/', $data['date'], $m)) {
+        $year = $m[0];
+    }
+
+    // Title
+    $title = $data['title'] ?? '';
+
+    // Journal
+    $journal = $data['publicationTitle'] ?? '';
+
+    // Volume/Issue
+    $volume = $data['volume'] ?? '';
+    $issue = $data['issue'] ?? '';
+    $volIssue = $volume ? $volume : '';
+    if ($issue) $volIssue .= "($issue)";
+
+    // Pages
+    $pages = $data['pages'] ?? '';
+
+    // DOI
+    $doi = $data['DOI'] ?? '';
+    if (!$doi && !empty($data['extra']) && preg_match('/DOI:\s*([^\s]+)/i', $data['extra'], $doiMatch)) {
+        $doi = trim($doiMatch[1]);
+    }
+    $doiStr = $doi ? 'https://doi.org/' . $doi : '';
+
+    // Combine
+    $citation = '';
+    if ($authorStr) $citation .= $authorStr . ' ';
+    if ($year) $citation .= "($year): ";
+    $citation .= $title;
+    if ($journal) $citation .= '. ' . $journal;
+    if ($volIssue) $citation .= '. ' . $volIssue;
+    if ($pages) $citation .= ', ' . $pages;
+    if ($doiStr) $citation .= '. ' . $doiStr;
+
+    return trim($citation);
+}
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -182,6 +248,7 @@ if (!empty($displayItems)) {
             <?php
             $key = $item['key'] ?? '';
             $citation = isset($citationMap[$key]) && $citationMap[$key] ? $citationMap[$key] : null;
+            $citation = format_custom_citation($data);            
             if ($citation) {
                 $pdfDownloaded = false;
                 // Remove any trailing DOI URL from the citation
