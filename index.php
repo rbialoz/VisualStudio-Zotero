@@ -210,7 +210,8 @@ if (!empty($displayItems)) {
 
                 // {{ title truncate="50" case="snake" }}
                 $title = $data['title'] ?? 'untitled';
-                $title = strtolower(str_replace(' ', '_', $title));
+                // Use mb_strtolower for UTF-8 support
+                $title = mb_strtolower(str_replace(' ', '_', $title));
                 $title = substr($title, 0, 50);
                 
                 if (preg_match('/^Waldzustandsbericht/i', $title)) {
@@ -230,11 +231,12 @@ if (!empty($displayItems)) {
                 $filename = urldecode($filename); // decode percent-encoded UTF-8
                 // Replace en dash and em dash with a normal dash
                 // Not solved yet: %E2 problem
-                // Remove any remaining percent-encoded bytes (e.g. %E2)
-                $filename = preg_replace('/%[E][2]/', '_', rawurlencode($filename));
-                $filename = str_replace(["_-_"], "-", rawurldecode($filename));
+                // Remove any remaining percent-encoded bytes (e.g. %E2) TERM: "Vierte Bundeswaldinventur"
+                $filename = preg_replace('/%[E][2]$/', '_', rawurlencode($filename));
+                $filename = str_replace(["_-_"], "-", ($filename));
+                // $filename = str_replace(["Ü"], "ü", $filename);
                 // Remove any special characters not allowed in filenames
-                $filename = preg_replace('/[\/,:,\.\(\)*?"<>|]/', '', $filename);
+                $filename = preg_replace('/[\/,:,\.\(\)*?"<>|]/', '', rawurldecode($filename));
                 $filename = preg_replace('/__+/', '_', $filename); // collapse multiple underscores
                 $filename = trim($filename, '_-');
                 $filename = $filename . '.pdf'; // ensure .pdf extension   

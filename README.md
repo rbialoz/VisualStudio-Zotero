@@ -19,15 +19,11 @@ This PHP web application fetches entries from the Zotero Web API and displays th
 
 ## Problems
 
-### 2025-08-01
+### 2025-08-11
 
-- the '%E2' problem still remains
+- Autor: 'unknown' if only Editor is avaiable
   - Search term "Vierte Bundeswaldinventur" would show at the end
-- at the moment the big 'Ü' is not made to lower case
-  - Search term "Klimawandel und Forstwirtschaft"
-    - but only of the '%E2' line is not activated
-  - Serach term "Übertragbarkeit empirischer statistischer Waldwachstumsmodelle"
-    - here also, when the '%E2' line is active
+  - Maybe put the abbreviation of the Editor as author?
 - no idea how to implement the special NW-FVA style
 - there are still many entries with an author 'unknown'
   - maybe these are not articles but a different entry type
@@ -46,7 +42,7 @@ This PHP web application fetches entries from the Zotero Web API and displays th
 
 - "Berichte der Sektion Waldökosystemfoschung" (Reihe) auch mit der Namen der Serien und der Nummer des Bandes.
 
-2. Suche: "Effects of Climate and Atmospheric Nitrogen Deposition"
+1. Suche: "Effects of Climate and Atmospheric Nitrogen Deposition"
 
 - viele, viele Autoren (mehr als 20)
 
