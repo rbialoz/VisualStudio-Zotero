@@ -697,3 +697,30 @@ Stack trace:
 [11-Aug-2025 12:35:57 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
 [11-Aug-2025 12:37:31 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
 [11-Aug-2025 12:39:09 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 12:41:41 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 12:46:37 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 12:50:14 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 12:52:14 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 12:52:22 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:24 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:25 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:27 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:28 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:28 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:29 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:30 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:30 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:52:30 UTC] PHP Warning:  preg_match(): Delimiter must not be alphanumeric, backslash, or NUL in /home/rbialozyt/VisualStudio-Zotero/index.php on line 154
+[11-Aug-2025 12:54:07 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 12:54:45 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 12:55:15 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[11-Aug-2025 12:55:32 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 334

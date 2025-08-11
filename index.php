@@ -151,14 +151,17 @@ function format_custom_citation($data) {
     }
     $authorStr = implode('; ', $authors);
 
+    // Title
+    $title = $data['title'] ?? '';
+
+    if ( preg_match('/Waldzustandsbericht/i', $title ) ) {
+        $authorStr = 'NW-FVA' ;
+    }
     // Year
     $year = '';
     if (!empty($data['date']) && preg_match('/\d{4}/', $data['date'], $m)) {
         $year = $m[0];
     }
-
-    // Title
-    $title = $data['title'] ?? '';
 
     // Journal
     $journal = $data['publicationTitle'] ?? '';
@@ -314,7 +317,7 @@ function format_custom_citation($data) {
                     $pos = strpos($filepattern, '_');
                     // replace second underscore
                     $filepattern = substr_replace($filepattern, '*', $pos, 1);
-                    $filepattern = substr($filepattern, 0, 40);
+                    $filepattern = substr($filepattern, 0, 50);
                 }
                 $pdfPath = '/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/' . $filename;
                 // For web link, you may need to adjust the path to be accessible via HTTP if needed
