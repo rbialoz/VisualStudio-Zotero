@@ -285,8 +285,10 @@ function format_custom_citation($data) {
         <div class="entry">
             <?php
             $key = $item['key'] ?? '';
+            // print_r($item['key'] . " -- "); // uniqid of each entry
             $citation = isset($citationMap[$key]) && $citationMap[$key] ? $citationMap[$key] : null;
-            $citation = format_custom_citation($data);            
+            $citation = format_custom_citation($data);     
+            // print_r($data);  // to see all fields of the entry
             if ($citation) {
                 $pdfDownloaded = false;
                 // Remove any trailing DOI URL from the citation
@@ -344,6 +346,7 @@ function format_custom_citation($data) {
                 $filename = preg_replace('/[\/,:,\.\(\)*?"<>|]/', '', rawurldecode($filename));
                 $filename = preg_replace('/__+/', '_', $filename); // collapse multiple underscores
                 $filename = trim($filename, '_-');
+                $filename .= '_' . $key; // append unique key to ensure filename uniqueness
                 $filename = $filename . '.pdf'; // ensure .pdf extension   
                 $pos = strpos($filename, '_');
                 if ($pos !== false) {

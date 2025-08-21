@@ -24,7 +24,7 @@ This PHP web application fetches entries from the Zotero Web API and displays th
 - Autor: 'unknown' if only Editor is avaiable
   - Search term "Vierte Bundeswaldinventur" would show at the end
   - Maybe put the abbreviation of the Editor as author?
-- no idea how to implement the special NW-FVA style
+- I implemented the special NW-FVA style directly in PHP
 - there are still many entries with an author 'unknown'
   - maybe these are not articles but a different entry type
 - Fetch PDF if DOI links to a PDF file drectly, not so if it links to a html page
@@ -77,3 +77,7 @@ This PHP web application fetches entries from the Zotero Web API and displays th
   - aber das "In" bei Buchteil ohne Doppelpunkt
 
 Immer noch nicht das richtige Format gefunden. Eignetlich sieht "Natur und Landschaft" gut aus ODER "Egretta".
+
+## Use 'key' as identifier
+
+Since not all combinations of autor_year_title are unique, I propose to use the field 'key' to make all filenames unique. I think it is best to put it at the end of the filename before the '.pdf'.

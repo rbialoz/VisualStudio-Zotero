@@ -880,3 +880,71 @@ Stack trace:
 [11-Aug-2025 13:57:58 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 363
 [11-Aug-2025 14:00:06 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
 [11-Aug-2025 14:00:20 UTC] PHP Warning:  copy(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_f%C3%BCr_hessen-ergebnisse.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 369
+[11-Aug-2025 14:04:14 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 07:19:44 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 07:34:34 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 07:36:20 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 07:36:54 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 07:37:11 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 07:37:47 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 07:44:04 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 07:54:15 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 08:52:21 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 08:52:23 UTC] PHP Warning:  Undefined array key "citationKey" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 291
+[12-Aug-2025 08:52:25 UTC] PHP Warning:  Undefined array key "citationKey" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 291
+[12-Aug-2025 08:53:10 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 08:54:43 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[12-Aug-2025 09:02:55 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:23:10 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:23:41 UTC] PHP Warning:  file_put_contents(/media/rbialozyt/G/zotero_pdfs/alle_pdfs_save/alle_pdfs/paar_2016_waldbodenzustandsbericht_für_hessen-ergebnisse_JUM2A7D9.pdf): Failed to open stream: No such file or directory in /home/rbialozyt/VisualStudio-Zotero/index.php on line 388
+[21-Aug-2025 13:28:09 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:32:34 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:34:41 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:35:23 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:39:27 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:55:51 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:57:10 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:57:11 UTC] PHP Warning:  Undefined variable $attachmentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 13:57:13 UTC] PHP Warning:  Undefined variable $attachmentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 13:57:58 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:57:58 UTC] PHP Warning:  Undefined variable $parentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 13:58:01 UTC] PHP Warning:  Undefined variable $parentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 13:59:35 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 13:59:36 UTC] PHP Warning:  Undefined variable $parentToAttachment in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 13:59:37 UTC] PHP Warning:  Undefined variable $parentToAttachment in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:01 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:00:02 UTC] PHP Warning:  Undefined variable $parentToAttachment in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:02 UTC] PHP Warning:  Undefined variable $parentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:02 UTC] PHP Warning:  Trying to access array offset on null in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:03 UTC] PHP Warning:  Undefined variable $parentToAttachment in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:03 UTC] PHP Warning:  Undefined variable $parentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:03 UTC] PHP Warning:  Trying to access array offset on null in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:30 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:00:31 UTC] PHP Warning:  Undefined variable $parentToAttachment in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:31 UTC] PHP Warning:  Undefined variable $parentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:31 UTC] PHP Warning:  Trying to access array offset on null in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:31 UTC] PHP Warning:  Undefined variable $attachmentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 305
+[21-Aug-2025 14:00:33 UTC] PHP Warning:  Undefined variable $parentToAttachment in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:33 UTC] PHP Warning:  Undefined variable $parentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:33 UTC] PHP Warning:  Trying to access array offset on null in /home/rbialozyt/VisualStudio-Zotero/index.php on line 304
+[21-Aug-2025 14:00:33 UTC] PHP Warning:  Undefined variable $attachmentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 305
+[21-Aug-2025 14:00:58 UTC] PHP Parse error:  syntax error, unexpected token "<" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 284
+[21-Aug-2025 14:01:12 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:08:22 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:08:23 UTC] PHP Warning:  Undefined variable $attachmentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 308
+[21-Aug-2025 14:09:37 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:09:38 UTC] PHP Warning:  Undefined variable $attachmentKey in /home/rbialozyt/VisualStudio-Zotero/index.php on line 308
+[21-Aug-2025 14:10:55 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:13:42 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:13:43 UTC] PHP Warning:  Undefined variable $parentToAttachment in /home/rbialozyt/VisualStudio-Zotero/index.php on line 290
+[21-Aug-2025 14:13:43 UTC] PHP Warning:  Trying to access array offset on null in /home/rbialozyt/VisualStudio-Zotero/index.php on line 290
+[21-Aug-2025 14:13:44 UTC] PHP Warning:  Undefined variable $parentToAttachment in /home/rbialozyt/VisualStudio-Zotero/index.php on line 290
+[21-Aug-2025 14:13:44 UTC] PHP Warning:  Trying to access array offset on null in /home/rbialozyt/VisualStudio-Zotero/index.php on line 290
+[21-Aug-2025 14:14:52 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:14:53 UTC] PHP Warning:  Undefined array key "SPVJ6R5D" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 310
+[21-Aug-2025 14:14:55 UTC] PHP Warning:  Undefined array key "6E9SJBD7" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 310
+[21-Aug-2025 14:16:07 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:16:08 UTC] PHP Warning:  Undefined array key "SPVJ6R5D" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 310
+[21-Aug-2025 14:16:10 UTC] PHP Warning:  Undefined array key "6E9SJBD7" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 310
+[21-Aug-2025 14:17:12 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:41:24 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
