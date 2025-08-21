@@ -948,3 +948,4 @@ Stack trace:
 [21-Aug-2025 14:16:10 UTC] PHP Warning:  Undefined array key "6E9SJBD7" in /home/rbialozyt/VisualStudio-Zotero/index.php on line 310
 [21-Aug-2025 14:17:12 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
 [21-Aug-2025 14:41:24 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
+[21-Aug-2025 14:43:03 UTC] PHP Warning:  Undefined variable $tagsearch in /home/rbialozyt/VisualStudio-Zotero/index.php on line 60
